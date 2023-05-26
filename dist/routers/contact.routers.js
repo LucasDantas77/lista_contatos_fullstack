@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const contacts_controller_1 = require("../controllers/contacts.controller");
+const tokenisvalid_middleware_1 = require("../middlewares/tokenisvalid.middleware");
+const contactRoutes = (0, express_1.Router)();
+contactRoutes.post("", tokenisvalid_middleware_1.tokenIsValid, contacts_controller_1.createContactController);
+contactRoutes.patch("/:id", tokenisvalid_middleware_1.tokenIsValid, contacts_controller_1.updateContactController);
+contactRoutes.delete("/:id", tokenisvalid_middleware_1.tokenIsValid, contacts_controller_1.deleteContactController);
+exports.default = contactRoutes;

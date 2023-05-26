@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const user_controllers_1 = require("../controllers/user.controllers");
+const tokenisvalid_middleware_1 = require("../middlewares/tokenisvalid.middleware");
+const emailExist_middleware_1 = require("../middlewares/userMiddlewares/emailExist.middleware");
+const validatedData_middleware_1 = require("../middlewares/validatedData.middleware");
+const user_schemas_1 = require("../schemas/user.schemas");
+const UserRoutes = (0, express_1.Router)();
+UserRoutes.post("", (0, validatedData_middleware_1.dataIsValidMiddleware)(user_schemas_1.usersCreateSchema), emailExist_middleware_1.emailExists, user_controllers_1.createUserController);
+UserRoutes.get("", tokenisvalid_middleware_1.tokenIsValid, user_controllers_1.listUserController);
+UserRoutes.patch("/:profile", tokenisvalid_middleware_1.tokenIsValid, user_controllers_1.updateUserController);
+UserRoutes.delete("/:profile", tokenisvalid_middleware_1.tokenIsValid, user_controllers_1.deleteUserController);
+exports.default = UserRoutes;
