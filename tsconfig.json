@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "outDir": "./back-end/dist",
+    "outDir": "/dist",
     "strictPropertyInitialization": false,
     "resolveJsonModule": true
   },
