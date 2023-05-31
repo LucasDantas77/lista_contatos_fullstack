@@ -18,7 +18,7 @@ UserRoutes.post(
   emailExists,
   createUserController
 );
-UserRoutes.get("/:getProfile", tokenIsValid, listUserController);
+UserRoutes.get("/getProfile", tokenIsValid, listUserController);
 UserRoutes.patch("/:update-profile", tokenIsValid, updateUserController);
 UserRoutes.delete("/:delete-profile", tokenIsValid, deleteUserController);
 

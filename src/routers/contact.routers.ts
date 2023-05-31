@@ -16,10 +16,10 @@ contactRoutes.patch(
   updateContactController
 );
 contactRoutes.delete(
-  "/:contact/:delete/:id",
+  "/:delete/:id",
   tokenIsValid,
   deleteContactController
 );
-contactRoutes.get("/:listContact", tokenIsValid, getContactController);
+contactRoutes.get("/listContact", tokenIsValid, getContactController);
 
 export default contactRoutes;
