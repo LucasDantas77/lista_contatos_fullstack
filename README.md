@@ -1,7 +1,8 @@
 # lista_contatos_fullstack
-# um lista onde você pode criar e gerenciar seus contatos
+ uma lista onde você pode criar e gerenciar seus contatos
 
-# para instalações:
+para instalações:
 yarn add
 
-# para rodar a api yarn dev
+para rodar a api: 
+yarn dev
